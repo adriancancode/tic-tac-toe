@@ -1,36 +1,28 @@
-* {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-h1 {
-   text-align: center;
-   font-size: 3rem;
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
 }
 
-#holder {
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    margin: 20px auto;
+    width: 310px;
+}
+.cell {
+    width: 100px;
+    height: 100px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-}
-
-#game-board {
-    display: grid;
-    grid-template: repeat(3, 7rem) / repeat(3, 7rem);
-}
-#game-board > div {
-    border: 1px solid black;
-}
-
-.board-tile:hover, #reset:hover {
+    font-size: 24px;
+    border: 2px solid black;
     cursor: pointer;
 }
-#reset {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    padding: 10px 15px;
-    border-radius: 8px;
-    background-color: red;
-    border: 3px solid #5a2e1b;
-    color: white;
+.cell.taken {
+    cursor: not-allowed;
+}
+#status {
+    font-size: 20px;
+    margin-top: 20px;
 }
